@@ -1,0 +1,24 @@
+.searchbar {
+  text-align: center;
+}
+
+.pic-collection {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pic-collection img {
+ margin: 1rem;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    .gallery {
+        width: 100%;
+    }
+}
