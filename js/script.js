@@ -1,17 +1,17 @@
+let photoCaptions = [];
+
+$('.proj-pictures').each(function () {
+	let caption = $(this).children().attr('data-title').toLowerCase();
+	photoCaptions.push(caption);
+});
+
 $('#searching-section').keyup(function(){
   const request =  $('#searching-section').val().toLowerCase();
-
-if (request.length > 0) {
-  const $getImage = $('.proj-pictures data-title').text().toLowerCase();
-$('.proj-pictures').each(function(){
-  if ($(this).indexOf(request) >= 0) {
-  $(this).show();
-  }
-  else {
-  $(this).hide();}
-});
-}
-else {
-$('.proj-pictures').show();
-}
+    for (let i = 0; i < photoCaptions.length; i ++) {
+      if (photoCaptions[i].indexOf(request) < 0) {
+      	$('.proj-pictures').eq(i).hide();
+      } else {
+      	$('.proj-pictures').eq(i).show();
+      }
+      }
 });
